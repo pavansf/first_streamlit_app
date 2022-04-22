@@ -1,8 +1,9 @@
 #streamlit.stop()
 
 import streamlit
-#import pandas as pd
-#import requests
+import pandas as pd
+import requests
+#streamlit.stop()
 import snowflake.connector
 from urllib.error import URLError
 
@@ -56,6 +57,9 @@ streamlit.dataframe(my_data_rows)
 
 fruit_choice_ = streamlit.text_input('What fruit would you like to add?') 
 streamlit.write('Thanks for adding ', fruit_choice_)
+my_cur.execute("insert into fruit_load_list values('from streamlit)")
+
+
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #fruityvice_normalize = pd.json_normalize(fruityvice_response.json())
 #streamlit.dataframe(fruityvice_normalize)
